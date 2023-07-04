@@ -25,14 +25,18 @@ public class Bt3_2AddItem {
     }
     public static int[] add(int[] arr, int num, int ind) {
         int[] newArr = new int[arr.length + 1];
-            for (int i = 0; i < ind; i++){
+        if (ind < 0 || ind > arr.length){
+            return arr;
+        }else {
+            for (int i = 0; i < ind; i++) {
                 newArr[i] = arr[i];
             }
             newArr[ind] = num;
-            for (int i = ind + 1; i < newArr.length; i++){
+            for (int i = ind + 1; i < newArr.length; i++) {
                 newArr[i] = arr[i - 1];
             }
-        return newArr;
+            return newArr;
+        }
     }
 }
 
