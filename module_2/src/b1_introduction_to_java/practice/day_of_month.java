@@ -1,3 +1,5 @@
+package b1_introduction_to_java.practice;
+
 import java.util.Scanner;
 
 public class day_of_month {

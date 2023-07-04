@@ -1,3 +1,5 @@
+package b1_introduction_to_java.excercise;
+
 import java.util.Scanner;
 
 public class Bt1_1NameDislay {

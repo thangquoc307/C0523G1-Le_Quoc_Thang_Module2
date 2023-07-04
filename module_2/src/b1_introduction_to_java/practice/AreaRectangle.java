@@ -1,3 +1,5 @@
+package b1_introduction_to_java.practice;
+
 import java.util.Arrays;
 import java.util.Scanner;
 

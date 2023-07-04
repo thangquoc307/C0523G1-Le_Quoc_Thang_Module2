@@ -1,3 +1,5 @@
+package b1_introduction_to_java.practice;
+
 public class variable_datetype {
     public static void main(String[] args) {
         int i = 10;
