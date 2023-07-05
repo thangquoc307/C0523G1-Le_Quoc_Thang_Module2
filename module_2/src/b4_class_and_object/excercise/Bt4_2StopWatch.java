@@ -16,7 +16,7 @@ public class Bt4_2StopWatch {
     }
     public static class StopWatch{
         long startTime, endTime;
-        public StopWatch(){
+        private StopWatch(){
         }
         public long getStartTime(){
             return this.startTime;
