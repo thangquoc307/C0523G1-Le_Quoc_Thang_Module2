@@ -2,7 +2,7 @@ package b1_introduction_to_java.excercise;
 
 import java.util.Scanner;
 
-public class Bt1_3NumberToText {
+public class Bt3NumberToText {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập vô số 4 chữ số thôi nghe :3 nhiều hơn ko biêt code : ");
