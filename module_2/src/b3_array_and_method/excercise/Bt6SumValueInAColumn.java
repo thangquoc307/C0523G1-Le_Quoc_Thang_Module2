@@ -2,7 +2,7 @@ package b3_array_and_method.excercise;
 
 import java.util.Scanner;
 
-public class Bt3_6SumValueInAColumn {
+public class Bt6SumValueInAColumn {
     public static void main(String[] args) {
         int[][] arr = {{8,5,2,3,6,9,7}, {4,5,2,3,6,8,9}, {4,5,2,3,6,8,7}, {4,1,2,3,6,5,8}, {7,8,5,4,1,2,3}, {8,6,5,5,4,1,2}, {9,8,5,6,3,0,2}, {8,9,6,5,1,2,3}};
         print(arr);

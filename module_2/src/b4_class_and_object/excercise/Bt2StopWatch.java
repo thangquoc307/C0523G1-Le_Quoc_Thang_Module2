@@ -2,7 +2,7 @@ package b4_class_and_object.excercise;
 
 import java.util.Scanner;
 
-public class Bt4_2StopWatch {
+public class Bt2StopWatch {
     public static void main(String[] args) {
         StopWatch watch = new StopWatch();
         watch.start();

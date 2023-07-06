@@ -1,6 +1,6 @@
 package b6_inheritance.excercise;
 
-public class Bt6_4Triangle {
+public class Bt4Triangle {
     public static void main(String[] args) {
         Triangle triangle1 = new Triangle();
         System.out.println(triangle1.toString());

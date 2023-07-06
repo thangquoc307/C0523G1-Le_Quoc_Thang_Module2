@@ -1,6 +1,6 @@
 package b6_inheritance.excercise;
 
-public class Bt6_3MoveablePoint {
+public class Bt3MoveablePoint {
     public static void main(String[] args) {
         Point point1 = new Point();
         Point point2 = new Point(1561, 1611);

@@ -1,8 +1,6 @@
 package b6_inheritance.excercise;
 
-import java.awt.*;
-
-public class Bt6_2Point2dAndPoint3d {
+public class Bt2Point2dAndPoint3d {
     public static void main(String[] args) {
         Point2D point1 = new Point2D();
         Point2D point2 = new Point2D(10, 99);

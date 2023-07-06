@@ -2,7 +2,7 @@ package b3_array_and_method.excercise;
 
 import java.util.Scanner;
 
-public class Bt3_7PrincipalDiagonal {
+public class Bt7PrincipalDiagonal {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int length;

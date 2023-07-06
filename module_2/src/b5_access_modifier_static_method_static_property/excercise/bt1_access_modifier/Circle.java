@@ -1,4 +1,4 @@
-package b5_access_modifier_static_method_static_property.excercise.bt5_1access_modifier;
+package b5_access_modifier_static_method_static_property.excercise.bt1_access_modifier;
 
 public class Circle {
     private double radius;

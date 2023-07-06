@@ -1,6 +1,6 @@
 package b4_class_and_object.excercise;
 
-public class Bt4_3Fan {
+public class Bt3Fan {
     public static void main(String[] args) {
         Fan fan1 = new Fan();
         Fan fan2 = new Fan();

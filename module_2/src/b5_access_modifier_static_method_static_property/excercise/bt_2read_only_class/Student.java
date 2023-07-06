@@ -1,4 +1,4 @@
-package b5_access_modifier_static_method_static_property.excercise.bt5_2read_only_class;
+package b5_access_modifier_static_method_static_property.excercise.bt_2read_only_class;
 
 public class Student {
     String name = "John";

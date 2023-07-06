@@ -1,6 +1,6 @@
 package b3_array_and_method.excercise;
 
-public class Bt3_4MaxValueIn2DimensionalArray {
+public class Bt4MaxValueIn2DimensionalArray {
     public static void main(String[] args) {
         int[][] array = {{8,2,5,7}, {6,7,8,9,6,4}, {2,4,5,7,7,9,9,6,4,3}};
         print(array);

@@ -1,6 +1,6 @@
 package b3_array_and_method.excercise;
 
-public class Bt3_3MergeArray {
+public class Bt3MergeArray {
     public static void main(String[] args) {
         int[] array1 = {1,3,4,5,6,7,8,8,4,3};
         int[] array2 = {6,7,9,9,0,7,5,9,4,6,7,8};

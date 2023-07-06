@@ -1,6 +1,6 @@
 package b6_inheritance.excercise;
 
-public class Bt6_1CircleAndCylinder {
+public class Bt1CircleAndCylinder {
     public static void main(String[] args) {
         Circle circle1 = new Circle();
         Circle circle2 = new Circle(10, "White");

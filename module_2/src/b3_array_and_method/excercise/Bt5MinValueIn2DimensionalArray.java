@@ -2,7 +2,7 @@ package b3_array_and_method.excercise;
 
 import java.util.Scanner;
 
-public class Bt3_5MinValueIn2DimensionalArray {
+public class Bt5MinValueIn2DimensionalArray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Mời nhập vào số lượng phần tử trong mảng : ");

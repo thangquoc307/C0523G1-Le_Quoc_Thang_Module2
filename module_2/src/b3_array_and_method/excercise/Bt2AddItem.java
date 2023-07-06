@@ -2,7 +2,7 @@ package b3_array_and_method.excercise;
 
 import java.util.Scanner;
 
-public class Bt3_2AddItem {
+public class Bt2AddItem {
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,5,6,7,8,9,10,11,12,13,14};
         print(arr);

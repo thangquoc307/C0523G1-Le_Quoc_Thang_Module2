@@ -2,7 +2,7 @@ package b4_class_and_object.excercise;
 
 import java.util.Scanner;
 
-public class Bt4_1QuadraticEquation {
+public class Bt1QuadraticEquation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("A x^2 + B x + C = 0");

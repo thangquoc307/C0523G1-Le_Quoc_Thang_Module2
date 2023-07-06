@@ -2,7 +2,7 @@ package b3_array_and_method.excercise;
 
 import java.util.Scanner;
 
-public class Bt3_8Frequency {
+public class Bt8Frequency {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Mời nhập vào chuỗi ký tự : ");

@@ -1,6 +1,6 @@
-package b5_access_modifier_static_method_static_property.excercise.bt5_2read_only_class;
+package b5_access_modifier_static_method_static_property.excercise.bt_2read_only_class;
 
-public class Bt5_2ReadOnlyClass {
+public class Bt2ReadOnlyClass {
     public static void main(String[] args) {
         Student testStudent = new Student();
 
