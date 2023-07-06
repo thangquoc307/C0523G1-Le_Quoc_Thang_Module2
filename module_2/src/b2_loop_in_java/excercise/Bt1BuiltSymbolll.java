@@ -1,6 +1,6 @@
 package b2_loop_in_java.excercise;
 
-public class Bt1BuiltSymbol {
+public class Bt1BuiltSymbolll {
     public static void main(String[] args) {
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 7; j++){
