@@ -1,5 +1,4 @@
 package b7_abtract_class_and_interface.practice.interface_comparable;
-
 import shape.Circle;
 
 public class ComparableCircle extends Circle
