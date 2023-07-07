@@ -4,18 +4,27 @@ import java.util.Scanner;
 
 public class Bt2StopWatch {
     public static void main(String[] args) {
-        StopWatch watch = new StopWatch();
-        watch.start();
+//        StopWatch watch = new StopWatch();
+//        watch.start();
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Nhập đại cái j vào đây xem mất bao lâu");
+//        String str = scanner.nextLine();
+//
+//        watch.stop();
+//        System.out.println(watch.getElapsedtime());
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhập đại cái j vào đây xem mất bao lâu");
-        String str = scanner.nextLine();
+        StopWatch watch1 = new StopWatch();
+        watch1.start();
 
-        watch.stop();
-        System.out.println(watch.getElapsedtime());
+        for(int i = 0; i <= 10000; i++){
+            System.out.println(i);
+        }
+        watch1.stop();
+        System.out.println(watch1.getElapsedtime());
     }
     public static class StopWatch{
-        long startTime, endTime;
+        private long startTime, endTime;
         private StopWatch(){
         }
         public long getStartTime(){
@@ -28,7 +37,7 @@ public class Bt2StopWatch {
             this.startTime = System.currentTimeMillis();
         }
         public void stop(){
-            this.endTime = System.currentTimeMillis();
+            this.endTime = System.currentTimeMillis( );
         }
         public String getElapsedtime(){
             return "Thời gian thực thi của chương trình là " + (this.endTime - this.startTime) + "ms";

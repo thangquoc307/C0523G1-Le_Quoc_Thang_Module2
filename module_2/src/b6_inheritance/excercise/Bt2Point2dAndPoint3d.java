@@ -17,9 +17,11 @@ public class Bt2Point2dAndPoint3d {
 
     }
     public static class Point2D{
-        float x = 0.0f;
-        float y = 0.0f;
-        public Point2D(){}
+        float x;
+        float y;
+        public Point2D(){
+            this(0.0f, 0.0f);
+        }
         public Point2D(float x, float y){
             this.x = x;
             this.y = y;
@@ -48,8 +50,10 @@ public class Bt2Point2dAndPoint3d {
         }
     }
     public static class Point3D extends Point2D{
-        float z = 0.0f;
-        public Point3D(){}
+        private float z;
+        public Point3D(){
+            this.z = 0.0f;
+        }
         public Point3D(float x, float y, float z){
             this.x = x;
             this.y = y;

@@ -9,10 +9,12 @@ public class Bt4Triangle {
         System.out.println(triangle2.toString());
     }
     public static class Triangle{
-        double side1 = 1;
-        double side2 = 1;
-        double side3 = 1;
-        public Triangle(){}
+        double side1;
+        double side2;
+        double side3;
+        public Triangle(){
+            this(1, 1, 1);
+        }
         public Triangle(double side1, double side2, double side3){
             this.side1 = side1;
             this.side2 = side2;

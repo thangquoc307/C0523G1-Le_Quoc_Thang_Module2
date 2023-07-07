@@ -20,9 +20,11 @@ public class Bt3MoveablePoint {
         System.out.println(point4.toString());
     }
     public static class Point{
-        float x = 0.0f;
-        float y = 0.0f;
-        public Point(){}
+        float x;
+        float y;
+        public Point(){
+            this(0.0f, 0.0f);
+        }
         public Point(float x, float y){
             this.x = x;
             this.y = y;
@@ -51,9 +53,11 @@ public class Bt3MoveablePoint {
         }
     }
     public static class MovablePoint extends Point{
-        float xSpeed = 0.0f;
-        float ySpeed = 0.0f;
-        public MovablePoint(){}
+        float xSpeed;
+        float ySpeed;
+        public MovablePoint(){
+            this(0.0f, 0.0f);
+        }
         public MovablePoint(float xSpeed, float ySpeed){
             this.xSpeed = xSpeed;
             this.ySpeed = ySpeed;

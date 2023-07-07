@@ -17,9 +17,11 @@ public class Bt1CircleAndCylinder {
 
     }
     public static class Circle{
-        int radius = 5;
-        String colour = "Green";
-        public Circle(){}
+        int radius;
+        String colour;
+        public Circle(){
+            this(5, "Green");
+        }
         public Circle(int radius, String colour){
             this.colour = colour;
             this.radius = radius;
@@ -47,8 +49,10 @@ public class Bt1CircleAndCylinder {
         }
     }
     public static class Cylinder extends Circle {
-        int height = 6;
-        public Cylinder(){}
+        private int height;
+        public Cylinder(){
+            this.height = 6;
+        }
         public Cylinder(int radius, int height, String colour){
             this.radius = radius;
             this.height = height;

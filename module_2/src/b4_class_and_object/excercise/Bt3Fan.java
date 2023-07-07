@@ -23,10 +23,10 @@ public class Bt3Fan {
     }
 
     public static class Fan {
-        int speed;
-        boolean on;
-        double radius;
-        String color;
+        private int speed;
+        private boolean on;
+        private double radius;
+        private String color;
 
         public Fan() {
             this.speed = 1;
