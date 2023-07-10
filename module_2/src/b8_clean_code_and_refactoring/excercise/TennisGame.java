@@ -25,7 +25,7 @@ public class TennisGame {
         int minusResult = player1Score - player2Score;
 
         if (minusResult == 1) return "Advantage player1";
-        else if (minusResult == -1) return  "Advantage player2";
+        else if (minusResult == -1) return "Advantage player2";
         else if (minusResult >= 2) return "Win for player1";
         else return "Win for player2";
     }
@@ -34,10 +34,13 @@ public class TennisGame {
             switch(playerScore) {
                 case 0:
                     result = "Love";
+                    break;
                 case 1:
                     result = "Fifteen";
+                    break;
                 case 2:
                     result = "Thirty";
+                    break;
                 case 3:
                     result = "Forty";
             }
