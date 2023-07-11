@@ -1,4 +1,4 @@
-package b10_dsa.excercise.CustomMyLinkedList;
+package b10_dsa.practice.CustomMyLinkedList;
 
 public class MyLinkedList<E> {
     private Node head;
