@@ -14,15 +14,17 @@ public class Keyword {
         this.str = str;
     }
     public void countWord(){
-        Map<Character, Integer> listKey = new HashMap<>();
-        for (int i = 0; i < str.length(); i++){
-            if (!listKey.containsKey(str.charAt(i))){
-                listKey.put(str.charAt(i), 1);
+        str = str.toUpperCase();
+        Map<String, Integer> listKey = new HashMap<>();
+        String[] lst = str.split(" ");
+        for (int i = 0; i < lst.length; i++){
+            if (!listKey.containsKey(lst[i])){
+                listKey.put(lst[i], 1);
             }else {
-                listKey.put(str.charAt(i), listKey.get(str.charAt(i)) + 1);
+                listKey.put(lst[i], listKey.get(lst[i]) + 1);
             }
         }
-        for (Character key : listKey.keySet()){
+        for (String key : listKey.keySet()){
             int value = listKey.get(key);
             System.out.println("Ký tự : " + key + " Xuất hiện " + value + " lần");
         }
