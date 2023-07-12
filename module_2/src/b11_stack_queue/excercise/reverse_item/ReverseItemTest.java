@@ -2,12 +2,13 @@ package b11_stack_queue.excercise.reverse_item;
 
 public class ReverseItemTest {
     public static void main(String[] args) {
-        StackClass list1 = new StackClass<Integer>();
-        list1.addArray(new Integer[] {1,2,7,4,5,6,7,8});
+        StackClass list1 = new StackClass(1235447885);
+        StackClass list2 = new StackClass("dfagbtrb gstbr");
         list1.print();
-        System.out.println("");
+        list2.print();
         list1.reverse();
+        list2.reverse();
         list1.print();
-        System.out.println("");
+        list2.print();
     }
 }

@@ -2,27 +2,24 @@ package b11_stack_queue.excercise.reverse_item;
 
 import java.util.LinkedList;
 
-public class StackClass<T>{
-    private LinkedList<T> stack;
+public class StackClass{
+    private LinkedList stack = new LinkedList<Character>();
+    private String data;
 
-    public StackClass() {
-        stack = new LinkedList();
+    public StackClass(Integer element){
+        data = element.toString();
     }
-    public void addArray(T[] array){
-        for (int i = 0; i < array.length; i++){
-            stack.addLast(array[i]);
-        }
-    }
-    public void print(){
-        for (int i = 0; i < stack.size(); i++){
-            System.out.print(" " + stack.get(i));
-        }
+    public StackClass(String element){
+        this.data = element;
     }
     public void reverse(){
-        LinkedList<T> stackTemp = new LinkedList();
-        for (int i = 0; i < stack.size(); i++){
-            stackTemp.addFirst(stack.get(i));
+        String textTemp = "";
+        for (int i = this.data.length() - 1; i >= 0; i--){
+            textTemp += this.data.charAt(i);
         }
-        stack = stackTemp;
+        this.data = textTemp;
+    }
+    public void print(){
+        System.out.println(data);
     }
 }
