@@ -30,6 +30,7 @@ public class Queue {
             System.out.println("List rỗng rồi xóa chi ba");
         }else {
             this.head = this.head.next;
+            this.size--;
         }
     }
     public void dislayQueue(){
