@@ -5,7 +5,7 @@ public class test_queue {
         Queue list = new Queue();
         list.dislayQueue();
         System.out.println("");
-        System.out.println(list.deQueue());
+        list.deQueue();
         System.out.println("");
 
         list.enQueue(5555);
@@ -13,7 +13,9 @@ public class test_queue {
         list.enQueue("àdbtttttttbb");
         list.dislayQueue();
         System.out.println("");
-        System.out.println(list.deQueue());
+        list.deQueue();
+        list.dislayQueue();
+
         System.out.println("");
 
 

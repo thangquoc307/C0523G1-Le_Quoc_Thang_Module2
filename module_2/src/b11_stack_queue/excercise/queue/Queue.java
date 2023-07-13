@@ -25,15 +25,19 @@ public class Queue {
         }
         size++;
     }
-    public Node deQueue(){
-        return this.head;
+    public void deQueue(){
+        if (size == 0){
+            System.out.println("List rỗng rồi xóa chi ba");
+        }else {
+            this.head = this.head.next;
+        }
     }
     public void dislayQueue(){
         Node element = this.head;
         if (element == null){
             System.out.println("List rỗng");
         }else {
-            while (element.next != null) {
+            while (element != null) {
                 System.out.println(element.object);
                 element = element.next;
             }
