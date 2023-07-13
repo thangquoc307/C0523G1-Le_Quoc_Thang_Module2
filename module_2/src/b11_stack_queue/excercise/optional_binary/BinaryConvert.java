@@ -1,7 +1,7 @@
 package b11_stack_queue.excercise.optional_binary;
 
 public class BinaryConvert {
-    private Node head = null;
+    private Node head;
 
     public BinaryConvert(int number) {
         while (number != 0){
