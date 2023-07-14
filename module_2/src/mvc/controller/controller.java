@@ -10,7 +10,7 @@ public class controller {
     public static void main(String[] args) {
         CustomerRepository listCustomer = new CustomerRepository();
         listCustomer.addCustomer(new Customer(1, "Thắng Thua", 30, "Super Vip"));
-        listCustomer.addCustomer(new Customer(2, "Thắng Lợi", 32, "Vip"));
+        listCustomer.addCustomer(new Customer(2, "Thắng Thua", 32, "Vip"));
         listCustomer.addCustomer(new Customer(3, "Thắng cháy bánh xe", 40, "Hơi hơi Vip"));
         listCustomer.addCustomer(new Customer(4, "Bố Thắng", 90, "Cũng Vip"));
         listCustomer.addCustomer(new Customer(5, "Đứt Thắng", 66, "Tạm Vip"));
