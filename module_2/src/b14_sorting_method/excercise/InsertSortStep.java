@@ -1,4 +1,4 @@
-package b14_sorting_method.excercise.insert_sort_step;
+package b14_sorting_method.excercise;
 
 import sun.management.snmp.jvmmib.EnumJvmThreadContentionMonitoring;
 
