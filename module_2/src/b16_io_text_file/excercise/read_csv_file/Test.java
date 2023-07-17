@@ -6,6 +6,7 @@ public class Test {
     public static void main(String[] args) {
         ArrayList<String[]> list = new ArrayList<String[]>();
         list = ReadCsvFile.readCSVFile("b16_io_text_file/excercise/read_csv_file/Nation.csv");
+//        list = ReadCsvFile.readCSVFile("b16_io_text_file/excercise/read_csv_file/abc.csv");
         for (String[] strings : list){
             for (String string : strings){
                 System.out.print(string + " ");
