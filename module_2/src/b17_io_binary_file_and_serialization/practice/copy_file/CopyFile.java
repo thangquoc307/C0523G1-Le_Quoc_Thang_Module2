@@ -24,7 +24,6 @@ public class CopyFile {
             is.close();
             os.close();
         }
-
     }
 
     public static void main(String[] args) {
@@ -39,7 +38,8 @@ public class CopyFile {
         File destFile = new File(destPath);
 
         try {
-            copyFileUsingJava7Files(sourceFile, destFile);
+//            copyFileUsingJava7Files(sourceFile, destFile);
+            copyFileUsingStream(sourceFile, destFile);
             System.out.printf("Copy completed");
         } catch (IOException ioe) {
             System.out.printf("Can't copy that file");
