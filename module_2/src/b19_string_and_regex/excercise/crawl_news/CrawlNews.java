@@ -50,14 +50,12 @@ public class CrawlNews {
             String[] stringList = string.split("[\\>\\<]");
 
             String title = stringList[2];
-            title = title.replaceAll("\\&quot", "\"");
+            title = title.replaceAll("\\&quot", "\"").trim();
             listAnalyzeFinal.add(title);
 
             System.out.println(title);
         }
         //check số lượng chữ thông qua dấu cách
-        //xóa dấu cách trước và cuối hàng
-
 
 //        System.out.println(dataLine);
     }
