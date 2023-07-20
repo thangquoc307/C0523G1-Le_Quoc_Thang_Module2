@@ -1,11 +1,11 @@
 package CaseStudy.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class PCustomer extends Person{
     private String customerType;
     private String adress;
-    public PCustomer(String codeID, String name, Date birthday, boolean isman, String iDCard, String telephone, String email, String customerType, String adress) {
+    public PCustomer(String codeID, String name, LocalDate birthday, boolean isman, String iDCard, String telephone, String email, String customerType, String adress) {
         super(codeID, name, birthday, isman, iDCard, telephone, email);
         this.customerType = customerType;
         this.adress = adress;

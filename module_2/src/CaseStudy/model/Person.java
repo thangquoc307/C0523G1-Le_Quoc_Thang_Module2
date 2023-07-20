@@ -1,17 +1,18 @@
 package CaseStudy.model;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.time.LocalDate;
 
-public class Person {
+abstract class Person implements Serializable {
     protected String codeID;
     protected String Name;
-    protected Date birthday;
+    protected LocalDate birthday;
     protected boolean isman;
     protected String iDCard;
     protected String telephone;
     protected String email;
 
-    public Person(String codeID, String name, Date birthday, boolean isman, String iDCard, String telephone, String email) {
+    public Person(String codeID, String name, LocalDate birthday, boolean isman, String iDCard, String telephone, String email) {
         this.codeID = codeID;
         Name = name;
         this.birthday = birthday;
@@ -37,11 +38,11 @@ public class Person {
         Name = name;
     }
 
-    public Date getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 

@@ -1,6 +1,8 @@
 package CaseStudy.model;
 
-abstract class Facility {
+import java.io.Serializable;
+
+abstract class Facility implements Serializable {
     protected String serviceCode;
     protected String serviceName;
     protected Double area;
