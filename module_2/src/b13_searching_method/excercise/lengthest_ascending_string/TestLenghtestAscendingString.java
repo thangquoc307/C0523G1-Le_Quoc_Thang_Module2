@@ -15,5 +15,11 @@ public class TestLenghtestAscendingString {
         String str3 = "aabbbcccddssspppiiizzzAAA";
         System.out.println("String : " + str3);
         AnalyzeString.lengthestAcsendingString(str3);
+        System.out.println("");
+
+
+        String str4 = "ghijabcdef";
+        System.out.println("String : " + str4);
+        AnalyzeString.lengthestAcsendingString(str4);
     }
 }
