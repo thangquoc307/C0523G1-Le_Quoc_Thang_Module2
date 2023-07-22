@@ -1,18 +1,16 @@
-package CaseStudy.repository;
-
-
+package CaseStudy.utils;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Repository {
-    final static String SPLITKEY = "|";
-    public void write(String link, ArrayList<String> data){
+public class ReadAndWriteData {
+    public final static String SPLITKEY = "|";
+    public void write(String link, ArrayList<String> data, Boolean append){
         try{
             File file = new File(link);
             if(!file.exists()){
                 throw new FileNotFoundException();
             }
-            FileWriter fileWriter = new FileWriter(file, true);
+            FileWriter fileWriter = new FileWriter(file, append);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             for (String string : data){
                 bufferedWriter.write(string);

@@ -1,26 +1,22 @@
 package CaseStudy.model;
-
-import java.io.Serializable;
-
-abstract class Facility implements Serializable {
+abstract class Facility implements IFacility {
     protected String serviceCode;
     protected String serviceName;
     protected Double area;
     protected Double price;
     protected int capacity;
     protected String rentType;
-    protected int usedTime;
-
-    public Facility(String serviceCode, String serviceName, Double area, Double price, int capacity, String rentType, int usedTime) {
+    public Facility(String serviceCode, String serviceName, Double area, Double price, int capacity, String rentType) {
         this.serviceCode = serviceCode;
         this.serviceName = serviceName;
         this.area = area;
         this.price = price;
         this.capacity = capacity;
         this.rentType = rentType;
-        this.usedTime = usedTime;
     }
-
+    public String toStringForSave(){
+        return null;
+    }
     public String getServiceCode() {
         return serviceCode;
     }
@@ -67,13 +63,5 @@ abstract class Facility implements Serializable {
 
     public void setRentType(String rentType) {
         this.rentType = rentType;
-    }
-
-    public int getUsedTime() {
-        return usedTime;
-    }
-
-    public void setUsedTime(int usedTime) {
-        this.usedTime = usedTime;
     }
 }

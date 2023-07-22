@@ -1,32 +1,34 @@
 package b13_searching_method.excercise.binary_search_recurtion;
-import java.util.Arrays;
 public class SearchRecurtion {
-    private static void print(Integer[] printList){
-        for (Integer number : printList){
-            System.out.print(number + " ");
+        public static int binarySearch(int[] arr, int target) {
+            return binarySearchRecursive(arr, target, 0, arr.length - 1);
         }
-        System.out.println("");
-    }
-    public static String binarySearch(Integer[] list, int numberSearch){
-        System.out.println("Chuỗi hiện có :");
-        print(list);
-        Arrays.sort(list);
-        System.out.println("Chuỗi đã sắp xếp :");
-        print(list);
 
-        int head = 0;
-        int tail = list.length - 1;
+        private static int binarySearchRecursive(int[] arr, int target, int left, int right) {
+            if (left <= right) {
+                int mid = left + (right - left) / 2;
 
-        while (head <= tail){
-            int mid = (head + tail) / 2;
-            if (numberSearch > list[mid]){
-                head = mid + 1;
-            }else if (numberSearch < list[mid]) {
-                tail = mid - 1;
-            }else{
-                return "Số bạn cần ở vị trí : " + mid;
+                if (arr[mid] == target) {
+                    return mid;
+                } else if (arr[mid] < target) {
+                    return binarySearchRecursive(arr, target, mid + 1, right);
+                } else {
+                    return binarySearchRecursive(arr, target, left, mid - 1);
+                }
+            }
+
+            return -1;
+        }
+
+        public static void main(String[] args) {
+            int[] arr = {1, 3, 5, 7, 9, 11, 13, 15};
+            int target = 7;
+            int index = binarySearch(arr, target);
+
+            if (index != -1) {
+                System.out.println("Target " + target + " found at index: " + index);
+            } else {
+                System.out.println("Target " + target + " not found in the array.");
             }
         }
-        return "Kiếm không ra số bạn muốn";
-    }
 }

@@ -1,17 +1,22 @@
 package CaseStudy.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class PEmployee extends Person{
+public class Employee extends Person{
     private String education;
     private String position;
     private Double salary;
-    public PEmployee(String codeID, String name, LocalDate birthday, boolean isman, String iDCard, String telephone, String email, String education, String position, Double salary) {
+    public Employee(String codeID, String name, LocalDate birthday, boolean isman, String iDCard, String telephone, String email, String education, String position, Double salary) {
         super(codeID, name, birthday, isman, iDCard, telephone, email);
         this.education = education;
         this.position = position;
         this.salary = salary;
+    }
+
+    public Employee(String codeID) {
+        super(codeID);
     }
 
     public String getEducation() {
@@ -42,8 +47,8 @@ public class PEmployee extends Person{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PEmployee pEmployee = (PEmployee) o;
-        return Objects.equals(codeID, pEmployee.codeID);
+        Employee employee = (Employee) o;
+        return Objects.equals(codeID, employee.codeID);
     }
 
     @Override
@@ -55,8 +60,8 @@ public class PEmployee extends Person{
                 " - Học vấn : " + education + "\n" +
                 " - Giới tính : " + (isman ? "Nam" : "Nữ") + "\n" +
                 " - Năm sinh : " + birthday + "\n" +
-                " - Mức lương : " + salary.toString() + " VND\n" +
-                " - Điện thoại : " + telephone + " VND\n" +
-                " - Email : " + email + " VND\n";
+                " - Mức lương : " + new BigDecimal(salary).toPlainString() + " VND\n" +
+                " - Điện thoại : " + telephone + "\n" +
+                " - Email : " + email + "\n";
     }
 }

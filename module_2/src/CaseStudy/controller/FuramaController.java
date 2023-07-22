@@ -11,6 +11,7 @@ public class FuramaController {
             System.out.println("- 3 to Facility Management");
             System.out.println("- 4 to Booking Management");
             System.out.println("- 5 to Promotion Management");
+            System.out.println("- 6 to Exit");
 
             int choose = CheckKey.checkKey();
             if (choose == -1){
@@ -31,6 +32,9 @@ public class FuramaController {
                     break;
                 case 5:
                     PromotionManagementMenu.promotionManagementMenu();
+                    break;
+                case 6:
+                    System.exit(0);
                     break;
                 default:
                     System.err.println("Làm gì có chức năng '" + choose + "' bà noại");

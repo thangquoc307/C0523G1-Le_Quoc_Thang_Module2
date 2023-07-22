@@ -1,9 +1,11 @@
 package CaseStudy.controller;
 
+import CaseStudy.service.FacilityService;
 import CaseStudy.utils.CheckKey;
 
 public class FacilityManagementMenu {
     public static void facilityManagementMenu(){
+        FacilityService facilityService = new FacilityService();
         while (true) {
             System.out.println("---Facility Management Menu---");
             System.out.println("- 1 to Display list Facility");
@@ -18,12 +20,16 @@ public class FacilityManagementMenu {
             }
             switch (choose) {
                 case 1:
+                    facilityService.displayFacility();
                     return;
                 case 2:
+                    facilityService.addNewFacility();
                     return;
                 case 3:
+                    facilityService.displayFacilityNeedMaintenance();
                     return;
                 case 4:
+                    facilityService.deleteFacility();
                     return;
                 case 0:
                     FuramaController.displayMainMenu();

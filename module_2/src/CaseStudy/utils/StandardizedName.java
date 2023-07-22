@@ -15,4 +15,13 @@ public class StandardizedName {
         }
         return nameStardized;
     }
+    public static String standardizedServiceName(String name){
+        name = name.replaceAll(" +", " ").trim();
+        String[] wordList = name.split("");
+        String nameStardized = wordList[0].toUpperCase();
+        for (int i = 1; i < wordList.length; i++){
+                nameStardized += wordList[i].toLowerCase();
+        }
+        return nameStardized;
+    }
 }

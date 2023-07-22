@@ -1,9 +1,11 @@
 package CaseStudy.controller;
 
+import CaseStudy.service.CustomerService;
 import CaseStudy.utils.CheckKey;
 
 public class CustomerManagementMenu {
     public static void customerManagementMenu(){
+        CustomerService customerService = new CustomerService();
         while (true) {
             System.out.println("---Customer Management Menu---");
             System.out.println("- 1 to Display list Customer");
@@ -19,14 +21,19 @@ public class CustomerManagementMenu {
             }
             switch (choose) {
                 case 1:
+                    customerService.displayAllCustomer();
                     return;
                 case 2:
+                    customerService.addNewCustomer();
                     return;
                 case 3:
+                    customerService.editCustomer();
                     return;
                 case 4:
+                    customerService.deleteCustomer();
                     return;
                 case 5:
+                    customerService.searchCustomerByName();
                     return;
                 case 0:
                     FuramaController.displayMainMenu();

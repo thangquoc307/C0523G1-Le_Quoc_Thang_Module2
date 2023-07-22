@@ -22,6 +22,10 @@ abstract class Person implements Serializable {
         this.email = email;
     }
 
+    public Person(String codeID) {
+        this.codeID = codeID;
+    }
+
     public String getCodeID() {
         return codeID;
     }
