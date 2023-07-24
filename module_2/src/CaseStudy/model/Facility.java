@@ -1,4 +1,5 @@
 package CaseStudy.model;
+import java.util.Objects;
 abstract class Facility implements IFacility {
     protected String serviceCode;
     protected String serviceName;
@@ -14,9 +15,13 @@ abstract class Facility implements IFacility {
         this.capacity = capacity;
         this.rentType = rentType;
     }
+    public Facility(String serviceCode){
+        this.serviceCode = serviceCode;
+    };
     public String toStringForSave(){
         return null;
     }
+
     public String getServiceCode() {
         return serviceCode;
     }
@@ -63,5 +68,29 @@ abstract class Facility implements IFacility {
 
     public void setRentType(String rentType) {
         this.rentType = rentType;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Facility facility = (Facility) o;
+        return Objects.equals(serviceCode, facility.serviceCode);
+    }
+
+    @Override
+    public Double serviceFeePerDay() {
+        switch (rentType){
+            case "Năm":
+                return price / 365;
+            case "Tháng":
+                return price / 30;
+            case "Ngày":
+                return price / 1;
+            case "Giờ":
+                return price * 24;
+            default:
+                return 0.0;
+        }
     }
 }

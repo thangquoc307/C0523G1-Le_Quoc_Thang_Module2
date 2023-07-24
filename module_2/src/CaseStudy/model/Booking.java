@@ -1,23 +1,33 @@
 package CaseStudy.model;
-
-import java.io.Serializable;
-import java.util.Date;
-
-public class Booking implements Serializable {
+import CaseStudy.utils.ReadAndWriteData;
+import java.time.LocalDate;
+import java.util.Objects;
+public class Booking{
     protected String bookingCode;
-    protected Date bookingDate;
-    protected Date checkInDate;
-    protected Date checkOutDate;
+    protected LocalDate checkInDate;
+    protected LocalDate checkOutDate;
     protected String customerCode;
     protected String serviceCode;
 
-    public Booking(String bookingCode, Date bookingDate, Date checkInDate, Date checkOutDate, String customerCode, String serviceCode) {
+    public Booking(String bookingCode, LocalDate checkInDate, LocalDate checkOutDate, String customerCode, String serviceCode) {
         this.bookingCode = bookingCode;
-        this.bookingDate = bookingDate;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.customerCode = customerCode;
         this.serviceCode = serviceCode;
+    }
+
+    public Booking(String serviceCode) {
+        this.serviceCode = serviceCode;
+    }
+    public Booking() {}
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Booking booking = (Booking) o;
+        return Objects.equals(serviceCode, booking.serviceCode);
     }
 
     public String getBookingCode() {
@@ -28,27 +38,19 @@ public class Booking implements Serializable {
         this.bookingCode = bookingCode;
     }
 
-    public Date getBookingDate() {
-        return bookingDate;
-    }
-
-    public void setBookingDate(Date bookingDate) {
-        this.bookingDate = bookingDate;
-    }
-
-    public Date getCheckInDate() {
+    public LocalDate getCheckInDate() {
         return checkInDate;
     }
 
-    public void setCheckInDate(Date checkInDate) {
+    public void setCheckInDate(LocalDate checkInDate) {
         this.checkInDate = checkInDate;
     }
 
-    public Date getCheckOutDate() {
+    public LocalDate getCheckOutDate() {
         return checkOutDate;
     }
 
-    public void setCheckOutDate(Date checkOutDate) {
+    public void setCheckOutDate(LocalDate checkOutDate) {
         this.checkOutDate = checkOutDate;
     }
 
@@ -66,5 +68,17 @@ public class Booking implements Serializable {
 
     public void setServiceCode(String serviceCode) {
         this.serviceCode = serviceCode;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + checkInDate + " - " + checkOutDate + ") " + serviceCode + " : " + customerCode;
+    }
+    public String toSave(){
+        return bookingCode + ReadAndWriteData.SPLITKEY +
+                checkInDate + ReadAndWriteData.SPLITKEY +
+                checkOutDate + ReadAndWriteData.SPLITKEY +
+                customerCode + ReadAndWriteData.SPLITKEY +
+                serviceCode;
     }
 }

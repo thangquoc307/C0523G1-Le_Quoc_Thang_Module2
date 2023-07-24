@@ -1,47 +1,97 @@
 package CaseStudy.repository;
-
+import CaseStudy.model.House;
 import CaseStudy.model.IFacility;
+import CaseStudy.model.Room;
+import CaseStudy.model.Villa;
 import CaseStudy.utils.ReadAndWriteData;
-
 import java.util.ArrayList;
-
 public class FacilityRepository implements IFacilityRepository{
     public static final String villaLink = "CaseStudy/data/villa.csv";
     public static final String houseLink = "CaseStudy/data/house.csv";
     public static final String roomLink = "CaseStudy/data/room.csv";
     @Override
-    public void displayFacility(int index) {
-
+    public ArrayList<IFacility> displayFacility() {
+        ArrayList<IFacility> facilitieList = new ArrayList<>();
+        facilitieList.addAll(displayVilla());
+        facilitieList.addAll(displayHouse());
+        facilitieList.addAll(displayRoom());
+        return facilitieList;
     }
-
     @Override
-    public void addNewFacility(IFacility element) {
+    public ArrayList<IFacility> displayVilla() {
         ReadAndWriteData readAndWriteData = new ReadAndWriteData();
-        ArrayList<String> list = new ArrayList<>();
-        String link = "";
-        System.out.println(element.getType());
-        switch (element.getType()){
-            case "Villa":
-                link = villaLink;
-                break;
-            case "House":
-                link = houseLink;
-                break;
-            case "Room":
-                link = roomLink;
-                break;
+        ArrayList<IFacility> facilitieList = new ArrayList<>();
+        ArrayList<String> dataStringVilla = readAndWriteData.read(villaLink);
+        for (String dataVilla : dataStringVilla){
+            String[] text = dataVilla.split(ReadAndWriteData.SPLITKEYREGEX);
+            facilitieList.add(new Villa(text[1], text[2], Double.parseDouble(text[3]), Double.parseDouble(text[4]), Integer.parseInt(text[5]), text[6], text[7], Double.parseDouble(text[8]), Integer.parseInt(text[9])));
         }
-        list.add(element.toStringForSave());
-        readAndWriteData.write(link, list, true);
+        return facilitieList;
     }
+    @Override
+    public ArrayList<IFacility> displayHouse() {
+        ReadAndWriteData readAndWriteData = new ReadAndWriteData();
+        ArrayList<IFacility> facilitieList = new ArrayList<>();
+        ArrayList<String> dataStringHouse = readAndWriteData.read(houseLink);
+        for (String dataHouse : dataStringHouse){
+            String[] text = dataHouse.split(ReadAndWriteData.SPLITKEYREGEX);
+            facilitieList.add(new House(text[1], text[2], Double.parseDouble(text[3]), Double.parseDouble(text[4]), Integer.parseInt(text[5]), text[6], text[7], Integer.parseInt(text[8])));
+        }
+        return facilitieList;
+    }
+    @Override
+    public ArrayList<IFacility> displayRoom() {
+        ReadAndWriteData readAndWriteData = new ReadAndWriteData();
+        ArrayList<IFacility> facilitieList = new ArrayList<>();
+        ArrayList<String> dataStringRoom = readAndWriteData.read(roomLink);
+        for (String dataRoom : dataStringRoom){
+            String[] text = dataRoom.split(ReadAndWriteData.SPLITKEYREGEX);
+            facilitieList.add(new Room(text[1], text[2], Double.parseDouble(text[3]), Double.parseDouble(text[4]), Integer.parseInt(text[5]), text[6], text[7]));
+        }
+        return facilitieList;
+    }
+    @Override
+    public void addNewFacility(ArrayList<IFacility> elementList, Boolean append) {
+        ReadAndWriteData readAndWriteData = new ReadAndWriteData();
+        ArrayList<String> stringVilla = new ArrayList<>();
+        ArrayList<String> stringHouse = new ArrayList<>();
+        ArrayList<String> stringRoom = new ArrayList<>();
 
+        for(IFacility building : elementList) {
+            switch (building.getType()) {
+                case "Villa":
+                    stringVilla.add(building.toStringForSave());
+                    break;
+                case "House":
+                    stringHouse.add(building.toStringForSave());
+                    break;
+                case "Room":
+                    stringRoom.add(building.toStringForSave());
+                    break;
+            }
+        }
+        readAndWriteData.write(villaLink, stringVilla, append);
+        readAndWriteData.write(houseLink, stringHouse, append);
+        readAndWriteData.write(roomLink, stringRoom, append);
+    }
     @Override
     public void displayFacilityNeedMaintenance() {
 
     }
-
     @Override
     public void deleteFacility(int index) {
-
+        ArrayList<IFacility> facilities = displayFacility();
+        facilities.remove(index);
+        addNewFacility(facilities, false);
+    }
+    @Override
+    public IFacility getFacilityById(String idCode){
+        ArrayList<IFacility> facilities = displayFacility();
+        for (int i = 0; i < facilities.size(); i++){
+            if (idCode.equals(facilities.get(i).getServiceCode())){
+                return facilities.get(i);
+            }
+        }
+        return null;
     }
 }

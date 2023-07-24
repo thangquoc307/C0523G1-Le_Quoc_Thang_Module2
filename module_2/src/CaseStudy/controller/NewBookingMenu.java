@@ -1,9 +1,9 @@
 package CaseStudy.controller;
-
+import CaseStudy.service.BookingService;
 import CaseStudy.utils.CheckKey;
-
 public class NewBookingMenu {
     public static void newBookingMenu(){
+        BookingService bookingService = new BookingService();
         while (true) {
             System.out.println("---New Booking Menu---");
             System.out.println("- 1 to Add new House");
@@ -17,10 +17,13 @@ public class NewBookingMenu {
             }
             switch (choose) {
                 case 1:
+                    bookingService.addNewHouseBooking();
                     return;
                 case 2:
+                    bookingService.addNewVillaBooking();
                     return;
                 case 3:
+                    bookingService.addNewRoomBooking();
                     return;
                 case 0:
                     FuramaController.displayMainMenu();

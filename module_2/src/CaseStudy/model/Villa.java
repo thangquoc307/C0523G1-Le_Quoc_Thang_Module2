@@ -1,8 +1,6 @@
 package CaseStudy.model;
-
 import CaseStudy.utils.ReadAndWriteData;
-
-import java.math.BigDecimal;
+import CaseStudy.utils.RoundDouble;
 
 public class Villa extends Facility{
     private String standard;
@@ -65,7 +63,7 @@ public class Villa extends Facility{
                 "- Mô tả : " + serviceName +"\n" +
                 "- Diện tích sử dụng : " + area + " m2" +"\n" +
                 "- Diện tích bể bơi : " + poorArea + " m2" +"\n" +
-                "- Giá : " + new BigDecimal(price).toPlainString() + " / " + rentType + "\n" +
+                "- Giá : " + RoundDouble.roundDouble(price) + " VND/" + rentType + "\n" +
                 "- Sức chứa : " + capacity + " Người" +"\n" +
                 "- Tiêu chuẩn : " + standard +"\n" +
                 "- Số tầng : " + level;

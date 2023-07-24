@@ -47,8 +47,8 @@ public class CreateCustomer {
                 System.out.println("Ngày phải nhập theo format DD/MM/YYYY");
                 continue;
             }
-            birthday = CheckAge.stringToDate(birthdayString);
-            if (!CheckAge.checkAge(birthday)) {
+            birthday = CheckDate.stringToDate(birthdayString);
+            if (!CheckDate.checkAge(birthday)) {
                 System.out.println("Chưa đủ 18 tuổi bạn ei");
                 continue;
             }

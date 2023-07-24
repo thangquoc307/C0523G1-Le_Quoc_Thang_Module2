@@ -1,9 +1,7 @@
 package CaseStudy.model;
-
-import java.io.Serializable;
 import java.time.LocalDate;
 
-abstract class Person implements Serializable {
+abstract class Person {
     protected String codeID;
     protected String Name;
     protected LocalDate birthday;

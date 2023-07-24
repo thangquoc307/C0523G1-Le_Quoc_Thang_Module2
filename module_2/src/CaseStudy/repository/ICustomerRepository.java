@@ -12,4 +12,5 @@ public interface ICustomerRepository {
 
     int findCustomerById(String idCode);
     ArrayList<Customer> findCustomerByName(String name);
+    Customer getCustomerById(String idCode);
 }

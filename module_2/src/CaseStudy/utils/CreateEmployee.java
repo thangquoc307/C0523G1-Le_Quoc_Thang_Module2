@@ -48,8 +48,8 @@ public class CreateEmployee {
                 System.out.println("Ngày phải nhập theo format DD/MM/YYYY");
                 continue;
             }
-            birthdayLocalTime = CheckAge.stringToDate(birthday);
-            if(!CheckAge.checkAge(birthdayLocalTime)){
+            birthdayLocalTime = CheckDate.stringToDate(birthday);
+            if(!CheckDate.checkAge(birthdayLocalTime)){
                 System.out.println("Chưa đủ 18 tuổi bạn ei");
                 continue;
             }

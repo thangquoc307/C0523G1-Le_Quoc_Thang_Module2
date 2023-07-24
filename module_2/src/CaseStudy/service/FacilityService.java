@@ -1,24 +1,23 @@
 package CaseStudy.service;
 
-import CaseStudy.model.House;
-import CaseStudy.model.IFacility;
-import CaseStudy.model.Room;
-import CaseStudy.model.Villa;
+import CaseStudy.model.*;
 import CaseStudy.repository.FacilityRepository;
 import CaseStudy.utils.CheckCode;
 import CaseStudy.utils.CreatHouse;
 import CaseStudy.utils.CreateRoom;
 import CaseStudy.utils.CreateVilla;
-
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FacilityService implements IFacilityService{
     FacilityRepository facilityRepository = new FacilityRepository();
     @Override
     public void displayFacility() {
-
+        ArrayList<IFacility> facilitiesList = facilityRepository.displayFacility();
+        for (IFacility element : facilitiesList){
+            System.out.println(element);
+        }
     }
-
     @Override
     public void addNewFacility() {
         Scanner scanner = new Scanner(System.in);
@@ -31,6 +30,9 @@ public class FacilityService implements IFacilityService{
             System.out.println("YYYY: Y là chữ số từ 0-9");
             System.out.println("Please nhập : ");
             id = scanner.nextLine().toUpperCase();
+            if (indexOfID(id) != -1){
+                System.out.println("ID " + id + " đã sử dụng, mời kiếm cái ID khác nghe");
+            }
             IFacility facility = null;
             Boolean save = false;
 
@@ -55,19 +57,37 @@ public class FacilityService implements IFacilityService{
                     break;
             }
             if (save){
-                facilityRepository.addNewFacility(facility);
+                ArrayList<IFacility> facilitiesList = new ArrayList<>();
+                facilitiesList.add(facility);
+                facilityRepository.addNewFacility(facilitiesList, true);
                 return;
             }
         }
     }
-
     @Override
     public void displayFacilityNeedMaintenance() {
 
     }
-
     @Override
     public void deleteFacility() {
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập vào mã công trình bạn muốn xóa");
+        String id = scanner.nextLine().toUpperCase();
+        int index = indexOfID(id);
+        if (index == -1){
+            System.out.println("Làm gì có công trình nào mã " + id + " ba");
+        } else {
+            facilityRepository.deleteFacility(index);
+        }
+    }
+    private int indexOfID(String id){
+        ArrayList<IFacility> facilitiesList = facilityRepository.displayFacility();
+        int index = -1;
+        for (int i = 0; i < facilitiesList.size(); i++){
+            if (facilitiesList.get(i).getServiceCode().equals(id)){
+                index = i;
+            }
+        }
+        return index;
     }
 }

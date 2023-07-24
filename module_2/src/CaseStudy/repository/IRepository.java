@@ -1,4 +1,5 @@
 package CaseStudy.repository;
 
-public interface IRepository {
+public interface IRepository<T> {
+
 }

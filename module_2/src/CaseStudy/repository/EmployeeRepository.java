@@ -29,7 +29,7 @@ public class EmployeeRepository implements IEmployeeRepository{
         ArrayList<String> stringList = readAndWriteData.read(link);
         ArrayList<Employee> employeeList = new ArrayList<>();
         for(String string : stringList){
-            String[]list = string.split("\\|");
+            String[]list = string.split(ReadAndWriteData.SPLITKEYREGEX);
             employeeList.add(new Employee(list[0], list[1], LocalDate.parse(list[2]), Boolean.parseBoolean(list[3]), list[4], list[5], list[6], list[7], list[8], Double.parseDouble(list[9])));
         }
         return employeeList;

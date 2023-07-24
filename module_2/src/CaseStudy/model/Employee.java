@@ -1,6 +1,6 @@
 package CaseStudy.model;
+import CaseStudy.utils.RoundDouble;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -60,7 +60,7 @@ public class Employee extends Person{
                 " - Học vấn : " + education + "\n" +
                 " - Giới tính : " + (isman ? "Nam" : "Nữ") + "\n" +
                 " - Năm sinh : " + birthday + "\n" +
-                " - Mức lương : " + new BigDecimal(salary).toPlainString() + " VND\n" +
+                " - Mức lương : " + RoundDouble.roundDouble(salary) + " VND\n" +
                 " - Điện thoại : " + telephone + "\n" +
                 " - Email : " + email + "\n";
     }
