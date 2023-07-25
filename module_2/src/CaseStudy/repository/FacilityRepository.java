@@ -3,8 +3,14 @@ import CaseStudy.model.House;
 import CaseStudy.model.IFacility;
 import CaseStudy.model.Room;
 import CaseStudy.model.Villa;
+import CaseStudy.utils.CheckMaintainance;
 import CaseStudy.utils.ReadAndWriteData;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class FacilityRepository implements IFacilityRepository{
     public static final String villaLink = "CaseStudy/data/villa.csv";
     public static final String houseLink = "CaseStudy/data/house.csv";
@@ -76,7 +82,7 @@ public class FacilityRepository implements IFacilityRepository{
     }
     @Override
     public void displayFacilityNeedMaintenance() {
-
+        CheckMaintainance.checkMaintainance();
     }
     @Override
     public void deleteFacility(int index) {
@@ -93,5 +99,28 @@ public class FacilityRepository implements IFacilityRepository{
             }
         }
         return null;
+    }
+
+    @Override
+    public void markMaintainedFacility(String facilityId, LocalDate date) {
+        Map<String, LocalDate> maintainanceHistory = getMaintainanceHistory();
+        maintainanceHistory.put(facilityId, date);
+
+        ReadAndWriteData readAndWriteData = new ReadAndWriteData();
+        ArrayList<String> stringArrayList = new ArrayList<>();
+        for (String key : maintainanceHistory.keySet()){
+            stringArrayList.add(key + ReadAndWriteData.SPLITKEY + maintainanceHistory.get(key));
+        }
+        readAndWriteData.write("CaseStudy/data/maintenance.csv", stringArrayList, false);
+    }
+    public Map<String, LocalDate> getMaintainanceHistory(){
+        ReadAndWriteData readAndWriteData = new ReadAndWriteData();
+        Map<String, LocalDate> mapMaintainance = new HashMap<>();
+        ArrayList<String> dataMaintainance = readAndWriteData.read("CaseStudy/data/maintenance.csv");
+        for (String string : dataMaintainance){
+            String[] list = string.split(ReadAndWriteData.SPLITKEYREGEX);
+            mapMaintainance.put(list[0], LocalDate.parse(list[1]));
+        }
+        return mapMaintainance;
     }
 }

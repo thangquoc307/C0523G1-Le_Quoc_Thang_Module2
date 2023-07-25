@@ -2,10 +2,9 @@ package CaseStudy.service;
 
 import CaseStudy.model.*;
 import CaseStudy.repository.FacilityRepository;
-import CaseStudy.utils.CheckCode;
-import CaseStudy.utils.CreatHouse;
-import CaseStudy.utils.CreateRoom;
-import CaseStudy.utils.CreateVilla;
+import CaseStudy.utils.*;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -66,7 +65,7 @@ public class FacilityService implements IFacilityService{
     }
     @Override
     public void displayFacilityNeedMaintenance() {
-
+        facilityRepository.displayFacilityNeedMaintenance();
     }
     @Override
     public void deleteFacility() {
@@ -80,6 +79,32 @@ public class FacilityService implements IFacilityService{
             facilityRepository.deleteFacility(index);
         }
     }
+
+    @Override
+    public void markMaintainedFacility() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Mời nhập vào mã phòng bảo trì");
+        String builtCode = scanner.nextLine().toUpperCase();
+        LocalDate date;
+
+        IFacility facility = facilityRepository.getFacilityById(builtCode);
+        if (facility == null){
+            System.out.println("Làm gì có phòng nào có mã " + builtCode + " bà noại");
+            return;
+        } else {
+            while (true) {
+                System.out.println("Mời nhập vào ngày bảo trì DD/MM/YYYY");
+                String stringDate = scanner.nextLine();
+                if (!CheckCode.time(stringDate)){
+                    break;
+                }
+                date = CheckDate.stringToDate(stringDate);
+                facilityRepository.markMaintainedFacility(builtCode, date);
+                return;
+            }
+        }
+    }
+
     private int indexOfID(String id){
         ArrayList<IFacility> facilitiesList = facilityRepository.displayFacility();
         int index = -1;

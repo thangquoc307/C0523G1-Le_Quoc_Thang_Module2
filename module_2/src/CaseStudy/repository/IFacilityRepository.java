@@ -1,7 +1,7 @@
 package CaseStudy.repository;
 
 import CaseStudy.model.IFacility;
-
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public interface IFacilityRepository {
@@ -13,4 +13,5 @@ public interface IFacilityRepository {
     void displayFacilityNeedMaintenance();
     void deleteFacility(int index);
     public IFacility getFacilityById(String idCode);
+    void markMaintainedFacility(String facilityId, LocalDate date);
 }
