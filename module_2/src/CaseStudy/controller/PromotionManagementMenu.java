@@ -1,10 +1,12 @@
 package CaseStudy.controller;
 
+import CaseStudy.service.PromotionService;
 import CaseStudy.utils.CheckKey;
 
 public class PromotionManagementMenu {
     public static void promotionManagementMenu(){
         while (true) {
+            PromotionService promotionService = new PromotionService();
             System.out.println("---Promotion Management Menu---");
             System.out.println("- 1 to Display list customers use service");
             System.out.println("- 2 to Display list customers get voucher");
@@ -16,6 +18,7 @@ public class PromotionManagementMenu {
             }
             switch (choose) {
                 case 1:
+                    promotionService.displayCustomerUseService();
                     return;
                 case 2:
                     return;
