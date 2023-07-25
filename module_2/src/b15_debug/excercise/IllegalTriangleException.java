@@ -1,8 +1,8 @@
 package b15_debug.excercise;
 
-public class IllegalTriangleException extends Throwable {
+public class IllegalTriangleException extends Exception {
 
-    public IllegalTriangleException(String s) {
-        System.out.println(s);
+    public IllegalTriangleException(String message) {
+        super(message);
     }
 }
