@@ -14,10 +14,7 @@ public class ReadBinaryProductList {
         try{
             FileInputStream fis = new FileInputStream(path);
             ObjectInputStream ois = new ObjectInputStream(fis);
-
             list = (ArrayList<BinaryProduct>) ois.readObject();
-
-
         } catch (FileNotFoundException e) {
             System.err.println("Không tìm thấy file");
         } catch (IOException e) {

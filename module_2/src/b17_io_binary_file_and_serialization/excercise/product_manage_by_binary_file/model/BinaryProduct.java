@@ -16,13 +16,6 @@ public class BinaryProduct implements Serializable {
         this.manufacturer = manufacturer;
         this.description = description;
     }
-    public BinaryProduct(String idCode, String name, Double price, String manufacturer) {
-        this.idCode = idCode;
-        this.name = name;
-        this.price = price;
-        this.manufacturer = manufacturer;
-    }
-
     public String getIdCode() {
         return idCode;
     }
@@ -70,6 +63,6 @@ public class BinaryProduct implements Serializable {
         System.out.println("- Nhà sản xuất : " + getManufacturer());
         System.out.println("- Mô tả : " + getDescription());
         System.out.println("");
-
     }
+
 }
