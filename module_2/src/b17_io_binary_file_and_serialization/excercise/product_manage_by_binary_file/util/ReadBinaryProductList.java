@@ -1,4 +1,6 @@
-package b17_io_binary_file_and_serialization.excercise.product_manage_by_binary_file;
+package b17_io_binary_file_and_serialization.excercise.product_manage_by_binary_file.util;
+
+import b17_io_binary_file_and_serialization.excercise.product_manage_by_binary_file.model.BinaryProduct;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
