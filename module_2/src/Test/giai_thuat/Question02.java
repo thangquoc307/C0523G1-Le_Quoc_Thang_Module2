@@ -1,7 +1,7 @@
 package Test.giai_thuat;
 import java.util.ArrayList;
 import java.util.List;
-public class Question2 {
+public class Question02 {
     //Cho hai xâu kí tự, tìm số lượng ký tự chung giữa chúng.
     public static void main(String[] args) {
 

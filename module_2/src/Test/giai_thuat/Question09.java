@@ -1,6 +1,6 @@
 package Test.giai_thuat;
 
-public class Question9 {
+public class Question09 {
     //Người ta định nghĩa số vòng là một số tự nhiên mà mà chữ số đầu trùng với chữ số cuối của nó. Ví dụ 303, 101, 8, 88 là những số vòng.
     public static void main(String[] args) {
         System.out.println(checkCirlenum(9, 13));

@@ -1,7 +1,7 @@
 package Test.giai_thuat;
 import java.util.ArrayList;
 import java.util.List;
-public class Question4 {
+public class Question04 {
     //Chương trình sửa lại xâu kí tự:
     //Cho một xâu kí tự s gồm nhiều từ. Trong đó mỗi từ sẽ được bắt đầu bởi một kí tự in hoa.
     //Vì một lí do gì đó, người ta quên chèn các khoảng trắng giữa các từ.

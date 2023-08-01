@@ -2,7 +2,7 @@ package Test.giai_thuat;
 
 import java.util.*;
 
-public class Question8 {
+public class Question08 {
     //Tìm số lần xuất hiện mảng con trong mảng cha
     //Điều kiện child là con của parent (các phần tử trong mảng child xuất hiện ít nhất 1 lần trong mảng parent)
     public static void main(String[] args) {

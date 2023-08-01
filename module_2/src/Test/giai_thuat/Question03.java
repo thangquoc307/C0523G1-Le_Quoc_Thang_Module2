@@ -1,6 +1,6 @@
 package Test.giai_thuat;
 
-public class Question3 {
+public class Question03 {
     //Kiểm tra mảng có “đẹp” hay không
     //Một mảng được gọi là "đẹp" nếu mảng đó chứa một phần tử mà phần tử đó chia mảng làm 2 phần (không rỗng và không chứa phần tử đó) có tổng bằng nhau.
     public static void main(String[] args) {

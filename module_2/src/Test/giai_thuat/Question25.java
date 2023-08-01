@@ -29,6 +29,6 @@ public class Question25 {
         return arr[index];
     }
     public static void printDouble(Double number){
-        System.out.println(String.format("%.2f", number));
+        System.out.println(String.format("%.3f", number));
     }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Question5 {
+public class Question05 {
     //Xếp hàng theo chiều cao tăng dần:
     //Một nhóm người đứng thành hàng trong công viên. Giữa họ có một số cây không thể di chuyển
     //Giá trị “-1” đại diện cho cây trong công viên.
