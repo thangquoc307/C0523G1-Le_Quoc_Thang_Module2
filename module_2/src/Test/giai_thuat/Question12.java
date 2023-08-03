@@ -11,7 +11,7 @@ public class Question12 {
         System.out.println("Tổng số xe sử dụng : " + divTaxi(new int[] {1,2,4,2,3}));
         System.out.println("Tổng số xe sử dụng : " + divTaxi(new int[] {4,2,4,3,3}));
         System.out.println("Tổng số xe sử dụng : " + divTaxi(new int[] {1,2,4,3,1,2}));
-        System.out.println("Tổng số xe sử dụng : " + divTaxi(new int[] {2,2,4,3,2,3}));
+        System.out.println("Tổng số xe sử dụng : " + divTaxi(new int[] {2,2,4,3,2,3,1,1,1,1,1}));
     }
     public static int divTaxi(int[] arr){
         List<Integer> list = new ArrayList<>();
