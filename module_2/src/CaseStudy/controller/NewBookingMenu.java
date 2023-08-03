@@ -1,9 +1,9 @@
 package CaseStudy.controller;
-import CaseStudy.service.BookingService;
+import CaseStudy.service.Booking;
 import CaseStudy.utils.CheckKey;
 public class NewBookingMenu {
     public static void newBookingMenu(){
-        BookingService bookingService = new BookingService();
+        Booking bookingService = new Booking();
         while (true) {
             System.out.println("---New Booking Menu---");
             System.out.println("- 1 to Add new House");

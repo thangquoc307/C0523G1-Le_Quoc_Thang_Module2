@@ -1,8 +1,10 @@
 package CaseStudy.service;
 
+import CaseStudy.service.implement.IService;
+
 import java.util.ArrayList;
 
-public class Service implements IService{
+public class Service implements IService {
     @Override
     public void display(ArrayList<?> list) {
         for(Object element : list){

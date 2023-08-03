@@ -1,22 +1,21 @@
 package CaseStudy.utils;
-import CaseStudy.model.Booking;
 import CaseStudy.model.IFacility;
-import CaseStudy.repository.BookingRepository;
-import CaseStudy.repository.FacilityRepository;
+import CaseStudy.repository.Booking;
+import CaseStudy.repository.Facility;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class CheckAvailableService {
     public static ArrayList<IFacility> checkAvailableService(LocalDate checkIn, LocalDate checkOut, String type){
-        BookingRepository bookingRepository = new BookingRepository();
-        FacilityRepository facilityRepository = new FacilityRepository();
+        Booking bookingRepository = new Booking();
+        Facility facilityRepository = new Facility();
 
-        ArrayList<Booking> currentBooking = bookingRepository.customDisplayBooking(type);
-        ArrayList<Booking> bookingOverlapTime = new ArrayList<>();
+        ArrayList<CaseStudy.model.Booking> currentBooking = bookingRepository.customDisplayBooking(type);
+        ArrayList<CaseStudy.model.Booking> bookingOverlapTime = new ArrayList<>();
         ArrayList<IFacility> facilities;
         ArrayList<IFacility> facilitiesReturn = new ArrayList<>();
 
-        for (Booking booking : currentBooking){
+        for (CaseStudy.model.Booking booking : currentBooking){
             if (!CheckDate.checkOverlapTime(checkIn, checkOut, booking.getCheckInDate(), booking.getCheckOutDate())){
                 bookingOverlapTime.add(booking);
             }
@@ -30,7 +29,7 @@ public class CheckAvailableService {
             facilities = facilityRepository.displayRoom();
         }
         for (IFacility facility : facilities){
-            if (!bookingOverlapTime.contains(new Booking(facility.getServiceCode()))){
+            if (!bookingOverlapTime.contains(new CaseStudy.model.Booking(facility.getServiceCode()))){
                 facilitiesReturn.add(facility);
             }
         }

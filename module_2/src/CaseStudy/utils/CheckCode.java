@@ -22,6 +22,8 @@ public class CheckCode {
     private static String rentType = "^Năm$|^Tháng$|^Ngày$|^Giờ$";
     private static String standard = "^[1-5]$";
     private static String level = "^[1-9][0-9]*$";
+    private static String isMale = "^[1|2]$";
+
     private static boolean checkCode(String regex, String text){
         Pattern pattern = Pattern.compile(regex);
         return pattern.matcher(text).matches();
@@ -41,10 +43,10 @@ public class CheckCode {
                 LocalDate.of(Integer.parseInt(list[2]),Integer.parseInt(list[1]),Integer.parseInt(list[0]));
                 return true;
             } catch (DateTimeException e){
-                System.out.println("Làm gì có ngày này bà noại");
+                System.err.println("Làm gì có ngày này bà noại");
                 return false;
             } catch (ArrayIndexOutOfBoundsException e){
-                System.out.println("Nhập sai format kìa");
+                System.err.println("Nhập sai format kìa");
                 return false;
             }
     }
@@ -81,5 +83,8 @@ public class CheckCode {
     }
     public static boolean checkLevel(String text){
         return checkCode(level, text);
+    }
+    public static boolean checkIsMale(String text){
+        return checkCode(isMale, text);
     }
 }

@@ -42,7 +42,7 @@ public class ReadAndWriteData {
 
 
         } catch (FileNotFoundException e) {
-            System.out.println("Kiếm không ra file bạn ei");
+            System.err.println("Kiếm không ra file bạn ei");
             ;
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -62,7 +62,7 @@ public class ReadAndWriteData {
 
             return Integer.parseInt(line);
         } catch (FileNotFoundException e) {
-            System.out.println("Kiếm không ra file bạn ei");
+            System.err.println("Kiếm không ra file bạn ei");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

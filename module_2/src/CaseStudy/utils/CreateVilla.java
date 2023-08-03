@@ -20,12 +20,12 @@ public class CreateVilla {
             System.out.println("Mời nhập vào diện tích sử dụng (m2)");
             String line = scanner.nextLine();
             if (!CheckCode.checkNumber(line)){
-                System.out.println("Nhập số vào ba ơi");
+                System.err.println("Nhập số vào ba ơi");
                 continue;
             }
             area = Double.parseDouble(line);
             if (area < 30){
-                System.out.println("Diện tích sử dụng phải lớn hơn 30m2");
+                System.err.println("Diện tích sử dụng phải lớn hơn 30m2");
                 continue;
             }
             break;
@@ -34,12 +34,12 @@ public class CreateVilla {
             System.out.println("Mời nhập vào giá thuê");
             String line = scanner.nextLine();
             if (!CheckCode.checkNumber(line)){
-                System.out.println("Nhập số vào ba ơi");
+                System.err.println("Nhập số vào ba ơi");
                 continue;
             }
             price = Double.parseDouble(line);
             if (price < 0){
-                System.out.println("Giá tiền có free đâu ba");
+                System.err.println("Giá tiền có free đâu ba");
                 continue;
             }
             break;
@@ -48,12 +48,12 @@ public class CreateVilla {
             System.out.println("Mời nhập vào sức chứa");
             String line = scanner.nextLine();
             if (!CheckCode.checkNumber(line)){
-                System.out.println("Nhập số vào ba ơi");
+                System.err.println("Nhập số vào ba ơi");
                 continue;
             }
             capacity = Integer.parseInt(line);
             if (capacity < 0 || capacity > 20){
-                System.out.println("Nhà này chứa được tối đa 20 người thôi bro");
+                System.err.println("Nhà này chứa được tối đa 20 người thôi bro");
                 continue;
             }
             break;
@@ -62,7 +62,7 @@ public class CreateVilla {
             System.out.println("Mời nhập vào kiểu thuê : Năm, Tháng, Ngày, Giờ");
             rentType = StandardizedName.standardizedName(scanner.nextLine());
             if (!CheckCode.checkRentType(rentType)){
-                System.out.println("Nhập sai format kiểu thuê : Năm, Tháng, Ngày, Giờ");
+                System.err.println("Nhập sai format kiểu thuê : Năm, Tháng, Ngày, Giờ");
                 continue;
             }
             break;
@@ -71,7 +71,7 @@ public class CreateVilla {
             System.out.println("Mời nhập vào tiêu chuẩn : 1-5 sao");
             standard = StandardizedName.standardizedName(scanner.nextLine());
             if (!CheckCode.checkStandard(standard)){
-                System.out.println("Nhập sai format tiêu chuẩn : 1-5 sao");
+                System.err.println("Nhập sai format tiêu chuẩn : 1-5 sao");
                 continue;
             }
             standard += " Sao";
@@ -81,12 +81,12 @@ public class CreateVilla {
             System.out.println("Mời nhập vào diện tích bể bơi (m2)");
             String line = scanner.nextLine();
             if (!CheckCode.checkNumber(line)){
-                System.out.println("Nhập số vào ba ơi");
+                System.err.println("Nhập số vào ba ơi");
                 continue;
             }
             poorArea = Double.parseDouble(line);
             if (poorArea < 30){
-                System.out.println("Diện tích bể bơi phải lớn hơn 30m2");
+                System.err.println("Diện tích bể bơi phải lớn hơn 30m2");
                 continue;
             }
             break;
@@ -95,7 +95,7 @@ public class CreateVilla {
             System.out.println("Mời nhập vào số tầng của căn hộ");
             String levelString = scanner.nextLine();
             if (!CheckCode.checkLevel(levelString)){
-                System.out.println("Nhập số tầng gì mà " + levelString + " vậy ba");
+                System.err.println("Nhập số tầng gì mà " + levelString + " vậy ba");
                 continue;
             }
             level = Integer.parseInt(levelString);
