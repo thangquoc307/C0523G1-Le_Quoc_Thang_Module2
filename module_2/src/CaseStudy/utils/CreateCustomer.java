@@ -1,11 +1,11 @@
 package CaseStudy.utils;
 
-import CaseStudy.repository.Customer;
+import CaseStudy.repository.CustomerRepository;
 import java.time.LocalDate;
 import java.util.Scanner;
 public class CreateCustomer {
     public static CaseStudy.model.Customer createCustomer(String idCodeEdit) {
-        Customer customerRepository = new Customer();
+        CustomerRepository customerRepository = new CustomerRepository();
         Scanner scanner = new Scanner(System.in);
         String codeID;
         String name;

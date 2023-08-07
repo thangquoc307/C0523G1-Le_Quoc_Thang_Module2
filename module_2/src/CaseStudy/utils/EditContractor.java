@@ -2,8 +2,8 @@ package CaseStudy.utils;
 
 import CaseStudy.model.Contractor;
 import CaseStudy.model.IFacility;
-import CaseStudy.repository.Booking;
-import CaseStudy.repository.Facility;
+import CaseStudy.repository.BookingRepository;
+import CaseStudy.repository.FacilityRepository;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class EditContractor {
     public static ArrayList editContractor(CaseStudy.model.Booking booking){
         Scanner scanner = new Scanner(System.in);
-        Facility facilityRepository = new Facility();
+        FacilityRepository facilityRepository = new FacilityRepository();
         ArrayList resultList = new ArrayList<>();
 
         LocalDate checkInDate = CreateBooking.checkDate("Check In Mới");
@@ -62,8 +62,8 @@ public class EditContractor {
         return resultList;
     }
     private static ArrayList<IFacility> checkAvailableServiceEdit(LocalDate checkIn, LocalDate checkOut, String type, CaseStudy.model.Booking editBooking){
-        Booking bookingRepository = new Booking();
-        Facility facilityRepository = new Facility();
+        BookingRepository bookingRepository = new BookingRepository();
+        FacilityRepository facilityRepository = new FacilityRepository();
         ArrayList<CaseStudy.model.Booking> bookingOverlapTime = new ArrayList<>();
         ArrayList<IFacility> facilitiesReturn = new ArrayList<>();
 

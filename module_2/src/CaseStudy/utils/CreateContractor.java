@@ -1,11 +1,11 @@
 package CaseStudy.utils;
 import CaseStudy.model.Contractor;
-import CaseStudy.repository.Facility;
+import CaseStudy.repository.FacilityRepository;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 public class CreateContractor {
     public static Contractor createContractor(String bookingCode, LocalDate checkInDate, LocalDate checkOutDate, String customerCode, String serviceCode){
-        Facility facilityRepository = new Facility();
+        FacilityRepository facilityRepository = new FacilityRepository();
 
         Double pricePerDay = facilityRepository.getFacilityById(serviceCode).serviceFeePerDay();
         Long days = ChronoUnit.DAYS.between(checkInDate, checkOutDate);

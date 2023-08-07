@@ -1,11 +1,11 @@
 package CaseStudy.utils;
 
-import CaseStudy.repository.Employee;
+import CaseStudy.repository.EmployeeRepository;
 import java.time.LocalDate;
 import java.util.Scanner;
 public class CreateEmployee {
     public static CaseStudy.model.Employee createEmployee(String idCodeEdit){
-        Employee employeeRepository = new Employee();
+        EmployeeRepository employeeRepository = new EmployeeRepository();
         Scanner scanner = new Scanner(System.in);
         String id;
         String name;

@@ -1,15 +1,15 @@
 package CaseStudy.utils;
 
-import CaseStudy.repository.Booking;
-import CaseStudy.repository.Facility;
+import CaseStudy.repository.BookingRepository;
+import CaseStudy.repository.FacilityRepository;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 public class CheckMaintainance {
     public static void checkMaintainance(){
-        Facility facilityRepository = new Facility();
-        Booking bookingRepository = new Booking();
+        FacilityRepository facilityRepository = new FacilityRepository();
+        BookingRepository bookingRepository = new BookingRepository();
         Map<String, LocalDate> listMaintainance = facilityRepository.getMaintainanceHistory();
         ArrayList<CaseStudy.model.Booking> bookingList = bookingRepository.displayBooking();
 
@@ -34,7 +34,7 @@ public class CheckMaintainance {
             }
 
             System.out.println("Building " + key + " :  Đã sử dụng " + listFacilityUseTime.get(key) + " lần");
-            System.err.println("- Lần bảo trì gần nhất : " + maintainance);
+            System.out.println("- Lần bảo trì gần nhất : " + maintainance);
         }
     }
 

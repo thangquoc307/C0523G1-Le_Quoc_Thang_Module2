@@ -1,11 +1,11 @@
 package CaseStudy.controller;
 
-import CaseStudy.service.Employee;
+import CaseStudy.service.EmployeeService;
 import CaseStudy.utils.CheckKey;
 
 public class EmployeeManagementMenu {
     public static void employeeManagementMenu(){
-        Employee employeeService = new Employee();
+        EmployeeService employeeService = new EmployeeService();
         while (true) {
             System.out.println("---Employee Management Menu---");
             System.out.println("- 1 to Display list Employees");

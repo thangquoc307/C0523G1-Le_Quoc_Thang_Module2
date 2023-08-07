@@ -1,11 +1,11 @@
 package CaseStudy.controller;
 
-import CaseStudy.service.Customer;
+import CaseStudy.service.CustomerService;
 import CaseStudy.utils.CheckKey;
 
 public class CustomerManagementMenu {
     public static void customerManagementMenu(){
-        Customer customerService = new Customer();
+        CustomerService customerService = new CustomerService();
         while (true) {
             System.out.println("---Customer Management Menu---");
             System.out.println("- 1 to Display list Customer");

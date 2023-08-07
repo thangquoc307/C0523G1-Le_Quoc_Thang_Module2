@@ -1,11 +1,11 @@
 package CaseStudy.controller;
 
-import CaseStudy.service.Facility;
+import CaseStudy.service.FacilityService;
 import CaseStudy.utils.CheckKey;
 
 public class FacilityManagementMenu {
     public static void facilityManagementMenu(){
-        Facility facilityService = new Facility();
+        FacilityService facilityService = new FacilityService();
         while (true) {
             System.out.println("---Facility Management Menu---");
             System.out.println("- 1 to Display list Facility");

@@ -1,5 +1,5 @@
 package CaseStudy.utils;
-import CaseStudy.repository.Customer;
+import CaseStudy.repository.CustomerRepository;
 import java.time.LocalDate;
 import java.util.Scanner;
 public class CreateBooking {
@@ -16,7 +16,7 @@ public class CreateBooking {
         return CheckDate.stringToDate(stringBooking);
     }
     public static String checkCustomer(){
-        Customer customerRepository = new Customer();
+        CustomerRepository customerRepository = new CustomerRepository();
         Scanner scanner = new Scanner(System.in);
         String customerID;
         while (true){

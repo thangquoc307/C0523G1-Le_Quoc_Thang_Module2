@@ -12,7 +12,7 @@ public class Bt3MoveablePoint {
         System.out.println(point3.toString());
         System.out.println(point4.toString());
 
-        System.out.println("Test");
+        System.out.println("Training");
         System.out.println(point4.toString());
         point4.move();
         System.out.println(point4.toString());

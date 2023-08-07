@@ -1,14 +1,14 @@
 package CaseStudy.utils;
 import CaseStudy.model.IFacility;
-import CaseStudy.repository.Booking;
-import CaseStudy.repository.Facility;
+import CaseStudy.repository.BookingRepository;
+import CaseStudy.repository.FacilityRepository;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class CheckAvailableService {
     public static ArrayList<IFacility> checkAvailableService(LocalDate checkIn, LocalDate checkOut, String type){
-        Booking bookingRepository = new Booking();
-        Facility facilityRepository = new Facility();
+        BookingRepository bookingRepository = new BookingRepository();
+        FacilityRepository facilityRepository = new FacilityRepository();
 
         ArrayList<CaseStudy.model.Booking> currentBooking = bookingRepository.customDisplayBooking(type);
         ArrayList<CaseStudy.model.Booking> bookingOverlapTime = new ArrayList<>();
